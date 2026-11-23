@@ -1,0 +1,370 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>For Kyi Sin Khant ❤️</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Nunito:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background: linear-gradient(135deg, #fff0f2, #fff5e9, #fce4ec);
+    color: #754b55;
+    font-family: 'Nunito', sans-serif;
+    overflow-x: hidden;
+}
+
+html { scroll-behavior: smooth; }
+
+.hearts span {
+    position: fixed;
+    bottom: -50px;
+    font-size: 22px;
+    opacity: 0;
+    animation: float 12s linear infinite;
+    z-index: 0;
+    pointer-events: none;
+}
+
+.hearts span:nth-child(1) { left: 10%; }
+.hearts span:nth-child(2) { left: 25%; animation-delay: 3s; }
+.hearts span:nth-child(3) { left: 50%; animation-delay: 6s; }
+.hearts span:nth-child(4) { left: 75%; animation-delay: 2s; }
+.hearts span:nth-child(5) { left: 90%; animation-delay: 5s; }
+
+@keyframes float {
+    0% { transform: translateY(0) rotate(0); opacity: 0; }
+    15% { opacity: .6; }
+    100% { transform: translateY(-110vh) rotate(360deg); opacity: 0; }
+}
+
+header {
+    text-align: center;
+    padding: 75px 20px 35px;
+    position: relative;
+    z-index: 1;
+}
+
+.subtitle {
+    color: #c27b91;
+    letter-spacing: 4px;
+    font-size: 12px;
+    text-transform: uppercase;
+}
+
+h1 {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(38px, 7vw, 65px);
+    color: #b65f7b;
+    margin: 15px 0;
+}
+
+header p {
+    font-size: 15px;
+    color: #98717b;
+}
+
+section {
+    max-width: 850px;
+    margin: 35px auto;
+    padding: 0 20px;
+    position: relative;
+    z-index: 1;
+}
+
+.card {
+    background: rgba(255,255,255,.65);
+    backdrop-filter: blur(15px);
+    border: 1px solid rgba(255,255,255,.8);
+    border-radius: 25px;
+    padding: 35px;
+    box-shadow: 0 12px 35px rgba(174,103,127,.10);
+}
+
+.section-title {
+    text-align: center;
+    font-family: 'Playfair Display', serif;
+    font-size: 30px;
+    color: #b65f7b;
+    margin-bottom: 25px;
+}
+
+.photo-frame {
+    width: 230px;
+    height: 280px;
+    margin: 0 auto 25px;
+    padding: 8px;
+    background: white;
+    border-radius: 18px;
+    box-shadow: 0 8px 25px #dca9b7;
+    transform: rotate(-2deg);
+    transition: .4s;
+}
+
+.photo-frame:hover {
+    transform: rotate(0deg) scale(1.04);
+}
+
+.photo-frame img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 12px;
+}
+
+.letter {
+    line-height: 2;
+    font-size: 16px;
+    text-align: center;
+}
+
+.letter .name {
+    font-family: 'Playfair Display', serif;
+    color: #c16d88;
+    font-size: 24px;
+    margin-bottom: 15px;
+}
+
+.memories {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 15px;
+}
+
+.memory {
+    text-align: center;
+    padding: 25px 12px;
+    border-radius: 18px;
+    background: #fff0f2;
+    transition: .3s;
+}
+
+.memory:hover {
+    transform: translateY(-8px);
+    background: #ffe3eb;
+}
+
+.memory .emoji {
+    font-size: 30px;
+    margin-bottom: 12px;
+}
+
+.memory h3 {
+    font-family: 'Playfair Display', serif;
+    color: #b65f7b;
+    font-size: 17px;
+    margin-bottom: 8px;
+}
+
+.memory p {
+    font-size: 13px;
+    line-height: 1.7;
+}
+
+.surprise {
+    text-align: center;
+}
+
+#reveal { display: none; }
+
+.surprise-btn {
+    display: inline-block;
+    margin-top: 20px;
+    padding: 14px 28px;
+    border-radius: 30px;
+    background: #d987a1;
+    color: white;
+    font-weight: 700;
+    cursor: pointer;
+    transition: .3s;
+    box-shadow: 0 5px 15px #e9b4c3;
+}
+
+.surprise-btn:hover {
+    background: #bd6685;
+    transform: scale(1.05);
+}
+
+.hidden-note {
+    display: none;
+    margin-top: 25px;
+    padding: 25px;
+    background: #fff0f3;
+    border-radius: 20px;
+    line-height: 2;
+}
+
+#reveal:checked ~ .hidden-note {
+    display: block;
+    animation: appear .6s ease;
+}
+
+@keyframes appear {
+    from { opacity: 0; transform: translateY(15px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+footer {
+    text-align: center;
+    padding: 45px 15px;
+    color: #bd8295;
+    font-size: 14px;
+}
+
+@media(max-width: 600px) {
+    .card { padding: 25px 18px; }
+    .memories { grid-template-columns: 1fr; }
+    .photo-frame { width: 210px; height: 255px; }
+    .letter { font-size: 14px; }
+}
+</style>
+</head>
+
+<body>
+
+<div class="hearts">
+    <span>♡</span>
+    <span>♥</span>
+    <span>♡</span>
+    <span>♥</span>
+    <span>♡</span>
+</div>
+
+<header>
+    <div class="subtitle">A Little Piece of My Heart</div>
+    <h1>For Kyi Sin Khant ♡</h1>
+    <p>Made with love, especially for you.</p>
+</header>
+
+<section>
+    <div class="card">
+        <h2 class="section-title">My Favorite Person</h2>
+
+        <div class="photo-frame">
+            <img src="foto/photo_2026-11-24_01-23-02.jpg" alt="A special memory">
+        </div>
+
+        <div class="letter">
+            <div class="name">Dear Kyi Sin Khant,</div>
+
+            I don't know where to begin, but I want
+            you to know how special you are to me.
+
+            <br><br>
+
+            You make ordinary days feel extraordinary.
+            Your smile makes my day brighter, and
+            your laughter is one of my favorite sounds.
+
+            <br><br>
+
+            I may not always find the perfect words
+            to express how I feel, but I hope my
+            actions will always remind you how much
+            you mean to me.
+
+            <br><br>
+
+            Thank you for being part of my life.
+            Thank you for being yourself.
+
+            <br><br>
+
+            I don't need a perfect love story.
+            I just want a beautiful story with you.
+
+            <br><br>
+
+            <strong>With all my love, ❤️</strong>
+        </div>
+    </div>
+</section>
+
+<section>
+    <div class="card">
+        <h2 class="section-title">Our Little Memories</h2>
+
+        <div class="memories">
+
+            <div class="memory">
+                <div class="emoji">🌷</div>
+                <h3>First Spark</h3>
+                <p>The beginning of something beautiful.</p>
+            </div>
+
+            <div class="memory">
+                <div class="emoji">☁️</div>
+                <h3>Favorite Laughs</h3>
+                <p>Your laughter makes every moment better.</p>
+            </div>
+
+            <div class="memory">
+                <div class="emoji">💗</div>
+                <h3>Always With You</h3>
+                <p>Here's to countless memories yet to come.</p>
+            </div>
+
+        </div>
+    </div>
+</section>
+
+<section>
+    <div class="card surprise">
+
+        <h2 class="section-title">One Little Surprise 💌</h2>
+
+        <p>
+            Do you know how much I adore you,
+            Kyi Sin Khant?
+        </p>
+
+        <input type="checkbox" id="reveal">
+
+        <label for="reveal" class="surprise-btn">
+            Click for a Surprise ♡
+        </label>
+
+        <div class="hidden-note">
+            <h2 style="color:#bd6685;font-family:'Playfair Display'">
+                You Are My Favorite Person! 💗
+            </h2>
+
+            If I could choose one person to make
+            countless beautiful memories with,
+            I would choose you every single time.
+
+            <br><br>
+
+            No matter how busy life gets,
+            I hope you always remember that
+            you are appreciated, valued, and loved.
+
+            <br><br>
+
+            Here's to us, to our little moments,
+            and to everything waiting ahead.
+
+            <br><br>
+
+            Forever grateful to have you in my world. ❤️
+        </div>
+
+    </div>
+</section>
+
+<footer>
+    Made with ♡ for Kyi Sin Khant
+    <br>
+    A little website, with a lot of love.
+</footer>
+
+</body>
+</html>
